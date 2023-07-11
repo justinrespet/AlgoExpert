@@ -11,6 +11,26 @@ Note that a single number in an array and the array itself are both valid subseq
 of the array.
 """
 
+# Sample Input
+sampleArray = [5,1,22,25,6,-1,8,10]
+sampleSequence = [1,6,8,10]
+
+# To solve this problem:
+def isValidSubsequence(array, sequence):
+# 1. Create an index counter for subsequence
+    index = 0
+# 2. Iterate through supersequence
+    for item in array:
+# 3. If indexed element of subsequence is found in supersequence, increment index
+        if sequence[index] == item:
+            index += 1
+# 4. If index equals length of subsequence, all elements in subsequence were found
+#    in order, return true. Else, return false.
+        if index == len(sequence):
+            return True
+    return False
+
+print(isValidSubsequence(sampleArray, sampleSequence))
 
 """
 Hint1: You can solve this question by iterating through the main input array once.
