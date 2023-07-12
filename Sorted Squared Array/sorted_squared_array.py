@@ -6,6 +6,33 @@ order and returns a new array of the same length with the squares of the origina
 integers also sorted in ascending order.
 """
 
+sampleArray = [1,2,3,4,6,8,9]
+testArray13 = [-50, -13, -2, -1, 0, 0, 1, 1, 2, 3, 19, 20]
+
+# solution 1, inefficient, using built in sort
+# def sortedSquaredArray(array):
+#     returnArray = []
+#     for item in array:
+#         returnArray.append(item ** 2)
+
+#     returnArray.sort()
+#     return returnArray
+
+# solution 2, using optimal method outlined in hints
+def sortedSquaredArray(array):
+# Use two pointers to keep track of the smallest and largest values in the input array.
+    smallestIndex = 0
+    largestIndex = len(array) - 1
+# Compare the absolute values of these smallest and largest values, square the 
+# larger absolute value, and place the square at the end of the output array, filling
+# it up from right to left. 
+
+# Move the pointers accordingly, and repeat this process
+# until the output array is filled.
+    return []
+
+print(sortedSquaredArray(testArray13))
+
 """
 Hint1: While the integers in the input array are sorted in increasing order, their
 squares won't necessarily be as well, because of the possible presence of 
@@ -20,7 +47,7 @@ to avoid sorting the output array. To do this, as you square the values of the i
 array, try to directly insert them into their correct position in the output array.
 
 Hint4: Use two pointers to keep track of the smallest and largest values in the input
-array. Compare the absolute values of these smalles and largest values, square the 
+array. Compare the absolute values of these smallest and largest values, square the 
 larger absolute value, and place the square at the end of the output array, filling
 it up from right to left. Move the pointers accordingly, and repeat this process
 until the output array is filled.
