@@ -25,11 +25,19 @@ def sortedSquaredArray(array):
     largestIndex = len(array) - 1
 # Compare the absolute values of these smallest and largest values, square the 
 # larger absolute value, and place the square at the end of the output array, filling
-# it up from right to left. 
-
-# Move the pointers accordingly, and repeat this process
+# it up from right to left. Move the pointers accordingly, and repeat this process
 # until the output array is filled.
-    return []
+    returnArray = []
+    while len(array) > len(returnArray):
+        if abs(array[smallestIndex]) > abs(array[largestIndex]):
+            returnArray.insert(0, array[smallestIndex] ** 2)
+            smallestIndex += 1
+        else:
+            returnArray.insert(0, array[largestIndex] ** 2)
+            largestIndex -= 1
+
+
+    return returnArray
 
 print(sortedSquaredArray(testArray13))
 
